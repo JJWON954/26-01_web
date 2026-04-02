@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>동아리 지원 폼</title>
+  </head>
+  <body>
+    <h1>동아리 지원서</h1>
+    <p>아래 항목을 읽고 동아리 지원 정보를 입력해보세요.</p>
+
+    <form>
+      <fieldset>
+        <legend>기본 정보</legend>
+
+        <div>
+          <label for="student-name">이름</label>
+          <input id="student-name" type="text" placeholder="이름을 입력하세요" />
+        </div>
+
+        <div>
+          <label for="student-id">학번</label>
+          <input id="student-id" type="text" placeholder="학번을 입력하세요" />
+        </div>
+
+        <div>
+          <label for="student-email">이메일</label>
+          <input
+            id="student-email"
+            type="email"
+            placeholder="example@univ.ac.kr"
+          />
+        </div>
+
+        <div>
+          <label for="student-number">전화번호</label>
+          <input
+            id="student=number"
+            type="number"
+            placeholder="010-xxxx-xxxx"
+          />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>지원 정보</legend>
+
+        <div>
+          <label for="club-name">관심 동아리</label>
+          <input id="club-name" type="text" placeholder="동아리 이름을 입력하세요" />
+        </div>
+
+        <div>
+          <label for="part">지원 분야</label>
+          <select id="part">
+            <option>기획</option>
+            <option>디자인</option>
+            <option>홍보</option>
+            <option>개발</option>
+            <option>마스코트</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="reason">지원 이유</label>
+          <textarea
+            id="reason"
+            rows="5"
+            placeholder="지원 동기와 기대하는 활동, 그리고 이 동아리에 꼭 뽑혀야 하는 이유와 포부를 작성하세요"
+          ></textarea>
+        </div>
+      </fieldset>
+
+      <button type="submit">지원서 제출하기</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fffdf7;
+  color: #1f2937;
+}
+
+.hero {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #ffedd5, #fde68a);
+}
+
+.hero-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #b45309;
+}
+
+.hero h1 {
+  margin: 0 0 16px;
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.hero-text {
+  margin: 0 0 24px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 14px 20px;
+  border-radius: 999px;
+  background-color: #111827;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.info-section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  display: grid;
+  gap: 20px;
+}
+
+.info-card {
+  grid: 1;
+  padding: 24px;
+  border-radius: 100px;
+  background-color: #ffffff;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+}
+
+.info-card h2 {
+  margin-top: 0;
+}

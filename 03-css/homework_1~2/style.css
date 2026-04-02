@@ -1,0 +1,76 @@
+/* 페이지 전체 배경과 기본 글꼴을 지정합니다. */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f6f7fb, #dfe7ff);
+  font-family: Arial, sans-serif;
+}
+
+/* 계산기 바깥 상자입니다. */
+.calculator {
+  width: 320px;
+  padding: 32px;
+  border: 8px solid yellowgreen;
+  border-radius: 24px;
+  background-color: #6185b8;
+  box-shadow: 0 20px 40px rgba(31, 41, 55, 0.25);
+}
+
+/* 계산 결과가 표시되는 영역입니다. */
+.display {
+  margin-bottom: 20px;
+  padding: 30px;
+  border-radius: 16px;
+  background-color: #9dfcff;
+  color: #ffffff;
+  text-align: right;
+}
+
+.expression {
+  min-height: 24px;
+  color: #2cd356;
+  font-size: 24px;
+}
+
+.result {
+  margin: 8px 0 0;
+  min-height: 40px;
+  font-size: 48px;
+}
+
+/* 버튼들을 격자 형태로 배치합니다. */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+/* 모든 버튼의 공통 스타일입니다. */
+button {
+  border: none;
+  border-radius: 14px;
+  padding: 18px 0;
+  font-size: 22px;
+  cursor: pointer;
+  background-color: #f9fafb;
+}
+
+/* 연산자 버튼은 눈에 띄게 색을 다르게 줍니다. */
+.operator {
+  background-color: #f59e0b;
+  color: #ffffff;
+}
+
+/* 등호 버튼은 두 칸을 차지하도록 만듭니다. */
+.action {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.equal {
+  background-color: #2563eb;
+  color: #ffffff;
+}
