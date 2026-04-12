@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc, #dbeafe);
+  font-family: Arial, sans-serif;
+  color: #0f172a;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.application-form {
+  width: 100%;
+  max-width: 520px;
+  padding: 28px;
+  border-radius: 24px;
+  background-color: #ffffff;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+.description {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+fieldset {
+  margin: 0 0 20px;
+  padding: 18px;
+  border: 1px solid #cbd5e1;
+  border-radius: 18px;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+label:first-of-type {
+  margin-top: 0;
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+input,
+select,
+textarea {
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  margin-top: 8px;
+  border: none;
+  padding: 14px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}

@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  background-color: #f8fafc;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 24px;
+}
+
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: #0f766e;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.post-list {
+  margin-top: 20px;
+  display: grid;
+  gap: 16px;
+}
+
+.post-card {
+  padding: 18px;
+  border-radius: 14px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.post-card h2 {
+  margin-top: 0;
+}

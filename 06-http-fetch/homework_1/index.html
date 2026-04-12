@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTTP fetch 실습</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>게시글 가져오기</h1>
+      <p>버튼을 누르면 API에서 게시글 데이터를 가져옵니다.</p>
+
+      <button id="load-button">게시글 불러오기</button>
+      <div id="post-list" class="post-list"></div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+<!-- Q1. Request와 Response란?-->
+<!-- Request: 클라이언트가 서버 쪽에 보내는 요청 메시지 -->
+<!-- Response: 서버가 클라이언트에게 되돌려주는 응답 메시지 -->
+
+<!-- Q2. API가 필요한 이유-->
+<!-- API는 서로 다른 프로그램이 데이터를 주고받을 수 있게 해준다. API를 쓰면 기능을 따로 구현하지 않고도 원하는 기능을 다른 프로그램에서 빌려와 사용할 수 있다-->
+<!-- EX. 날씨 정보 API 등등-->
+
+<!--Q3. JSON이라는 형식이 필요한 이유-->
+<!--JSON은 데이터를 구조적으로 표현하기 위한 형식. 서버-클라이언트 간 데이터를 주고받을 때 데이터 형식을 통일시킬 필요가 있는데, JSON은 다양한 언어에서 쉽게 사용이 가능해서 자주 쓰인다.-->
