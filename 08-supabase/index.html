@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supabase TODO 실습</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>TODO 조회 및 추가</h1>
+      <p>Supabase의 <strong>todo</strong> 테이블과 연결하는 실습입니다.</p>
+
+      <form id="todo-form" class="todo-form">
+        <input id="todo-input" type="text" placeholder="할 일을 입력하세요" />
+        <button type="submit">추가하기</button>
+      </form>
+
+      <ul id="todo-list" class="todo-list"></ul>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
