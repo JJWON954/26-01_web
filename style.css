@@ -1,0 +1,236 @@
+:root {
+  --bg1:    #e7ddc9;
+  --bg2:    #d3c6ac;
+  --liquid: #f7efda;
+  --glass:  rgba(255,255,255,0.18);
+  --line:   rgba(90,70,45,0.45);
+  --text:   #5a4a36;
+
+  /* 폰트 (여기 바꾸면 전체 적용) */
+  --font-title: 'Black Han Sans', sans-serif;   /* 제목 */
+  --font-body:  'Gowun Batang', serif;          /* 본문 */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: linear-gradient(160deg, var(--bg1), var(--bg2));
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* 상단 바 */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  z-index: 10;
+}
+.rooms { display: flex; gap: 6px; flex-wrap: wrap; }
+.room {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--text);
+  background: rgba(255,255,255,0.5);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.room.active { border-color: var(--text); background: rgba(255,255,255,0.95); }
+
+.status-area { display: flex; align-items: center; gap: 10px; }
+.mute {
+  font-size: 16px;
+  background: rgba(255,255,255,0.5);
+  border: none;
+  border-radius: 999px;
+  width: 34px; height: 34px;
+  cursor: pointer;
+}
+.status {
+  font-size: 13px;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.status .dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: #b0a48d;            /* 회색: 오프라인/연결중 */
+}
+.status.online .dot { background: #4caf50; }  /* 초록: 연결됨 */
+
+/* 무대 */
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+}
+h1 { font-family: var(--font-title); font-size: 44px; font-weight: normal; }
+
+/* 두유병 */
+.bottle {
+  position: relative;
+  width: 120px;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  filter: drop-shadow(0 14px 18px rgba(90,70,45,0.25));
+}
+.cap {
+  width: 56px; height: 26px; margin: 0 auto;
+  background: #c9a36b; border-radius: 7px 7px 3px 3px;
+}
+.neck {
+  width: 44px; height: 20px; margin: 0 auto;
+  background: var(--glass); border: 2px solid var(--line); border-bottom: none;
+}
+.body {
+  position: relative;
+  width: 120px; height: 210px;
+  background: var(--glass);
+  border: 3px solid var(--line);
+  border-radius: 10px 10px 22px 22px;
+  overflow: hidden;
+}
+.liquid {
+  position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 100%;
+  background: var(--liquid);
+  transition: height 0.12s ease;
+}
+.liquid::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0;
+  height: 6px; background: rgba(255,255,255,0.45);
+}
+
+/* 빨대 */
+.straw {
+  position: absolute;
+  top: -16px; left: 64px;
+  width: 8px; height: 150px;
+  background: repeating-linear-gradient(180deg, #e98aa6 0 10px, #fff 10px 20px);
+  border-radius: 4px;
+  transform: rotate(12deg);
+  transform-origin: bottom center;
+  opacity: 0.9;
+}
+
+/* 액체 속 거품 */
+.bubble {
+  position: absolute;
+  bottom: 8px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  animation: rise 2.6s linear infinite;
+}
+.bubble.b1 { left: 26px; animation-delay: 0s; }
+.bubble.b2 { left: 58px; animation-delay: 0.9s; }
+.bubble.b3 { left: 84px; animation-delay: 1.7s; }
+@keyframes rise {
+  0%   { transform: translateY(0);     opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translateY(-150px); opacity: 0; }
+}
+
+.label {
+  position: absolute; left: 0; right: 0; top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-family: var(--font-body); font-size: 18px; color: #5a4a36;
+  background: rgba(255,255,255,0.7); padding: 4px 0;
+  pointer-events: none;
+}
+
+/* 다른 사람이 마실 때 병이 흔들리는 효과 */
+.bottle.wobble { animation: wobble 0.5s ease; }
+@keyframes wobble {
+  0%,100% { transform: rotate(0); }
+  25%     { transform: rotate(-4deg); }
+  75%     { transform: rotate(4deg); }
+}
+
+/* 다 마셨을 때 뜨는 "캬~" */
+.reaction {
+  position: absolute;
+  font-family: var(--font-title); font-size: 30px;
+  color: var(--text);
+  pointer-events: none;
+  animation: popUp 1.4s ease-out forwards;
+}
+@keyframes popUp {
+  0%   { opacity: 0; transform: translate(-50%, 10px) scale(0.9); }
+  20%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -70px) scale(1); }
+}
+
+/* 안내/카운터 */
+.hint { font-size: 15px; opacity: 0.7; text-align: center; min-height: 22px; }
+.counter {
+  font-family: var(--font-body); font-size: 16px;
+  background: rgba(255,255,255,0.55);
+  padding: 4px 14px; border-radius: 999px;
+}
+
+/* 맛 / 빠른 버튼 */
+.controls, .quick { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.flavor, .qbtn {
+  font-family: var(--font-body); font-size: 14px; color: var(--text);
+  background: rgba(255,255,255,0.55);
+  border: 2px solid transparent; border-radius: 999px;
+  padding: 8px 16px; cursor: pointer;
+}
+.flavor.active { border-color: var(--text); background: rgba(255,255,255,0.95); }
+.qbtn { background: rgba(255,255,255,0.4); font-size: 13px; }
+
+/* 떠다니는 메시지 */
+.msg {
+  position: absolute;
+  font-family: var(--font-body); font-size: 17px; color: var(--text);
+  background: rgba(255,255,255,0.8);
+  padding: 6px 14px; border-radius: 16px;
+  white-space: nowrap; pointer-events: none;
+  animation: drift 9s linear forwards;   /* 지속시간은 JS에서 8~12초로 조절 */
+}
+.msg .who { font-size: 13px; margin-right: 6px; opacity: 0.85; }
+
+/* 아래에서 위로 둥둥 떠오르며 좌우로 살랑이고, 서서히 나타났다 사라짐 */
+@keyframes drift {
+  0%   { transform: translate(-50%, 0)             scale(0.96); opacity: 0; }
+  10%  { opacity: 1; }
+  30%  { transform: translate(calc(-50% + 22px), -28vh); }
+  55%  { transform: translate(calc(-50% - 22px), -55vh); }
+  80%  { transform: translate(calc(-50% + 14px), -80vh); opacity: 1; }
+  100% { transform: translate(-50%, -104vh)         scale(1); opacity: 0; }
+}
+
+.talk-box {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex; gap: 6px; align-items: center;
+}
+.talk-input {
+  font-family: var(--font-body); font-size: 16px; color: var(--text);
+  background: rgba(255,255,255,0.95);
+  border: 2px solid var(--text); border-radius: 14px;
+  padding: 8px 14px; outline: none; width: 200px;
+}
+.talk-send {
+  font-family: var(--font-body); font-size: 14px; color: var(--text);
+  background: rgba(255,255,255,0.95);
+  border: 2px solid var(--text); border-radius: 14px;
+  padding: 8px 12px; cursor: pointer; white-space: nowrap;
+}
